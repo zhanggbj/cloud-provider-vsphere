@@ -209,8 +209,8 @@ endif
 TEST_FLAGS ?= -v
 .PHONY: unit build-unit-tests
 unit unit-test:
-	curl -L https://go.kubebuilder.io/dl/2.3.1/${GOOS}/${GOARCH} | tar -xz -C /tmp/
-	mv /tmp/kubebuilder_2.3.1_${GOOS}_${GOARCH} /usr/local/kubebuilder
+	curl -L https://go.kubebuilder.io/dl/3.1.0/${GOOS}/${GOARCH} | tar -xz -C /tmp/
+	mv /tmp/kubebuilder_3.1.0_${GOOS}_${GOARCH} /usr/local/kubebuilder
 	export PATH=$PATH:/usr/local/kubebuilder/bin
 	env -u VSPHERE_SERVER -u VSPHERE_PASSWORD -u VSPHERE_USER go test $(TEST_FLAGS) -tags=unit $(PKGS_WITH_TESTS)
 build-unit-tests:
